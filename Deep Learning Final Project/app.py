@@ -171,7 +171,7 @@ def train_mobilenet(dataset_path, target_accuracy=None):
     )
 
     callbacks = [
-        tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', mode='max', patience=5, restore_best_weights=True),
+        tf.keras.callbacks.EarlyStopping(monitor='val_accuracy', mode='max', patience=3, restore_best_weights=True),
         tf.keras.callbacks.ModelCheckpoint("mobilenet_model.keras", save_best_only=True, monitor='val_accuracy', mode='max')
     ]
     if target_accuracy is not None:
